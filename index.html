@@ -13,7 +13,13 @@
 		<div class="finance-container">
 			<div class="transaction-container">
 				<h2>Transactions</h2>
-				<div class="transactions"></div>
+				<div class="transaction-key">
+					<h3>Name</h3>		
+					<h3>Amount</h3>		
+					<h3>Description</h3>		
+				</div>
+				<div class="transactions" id="transactions">
+				</div>
 				<h2>Balance</h2>
 				<div class="balance">
 					<h3>Income</h3>
@@ -44,6 +50,7 @@
                                 	<h3>Description</h3>
 					<textarea id="description" class="description-input" name="description" cols="30" rows="10"></textarea>
                                 </div>
+				<button id="submit-btn" class="submit-btn">Submit</button>
 			</div>
 		</div>
 	</div>

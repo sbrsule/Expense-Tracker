@@ -1,9 +1,14 @@
 const incomeDisplay = document.getElementById("income-display");
 const expenseDisplay = document.getElementById("expense-display");
 const balanceDisplay = document.getElementById("balance-display");
+const submitBtn = document.getElementById("submit-btn");
+const nameForm = document.getElementById("name");
+const amountForm = document.getElementById("amount");
+const descriptionForm = document.getElementById("description");
+const transactionParent = document.getElementById("transactions");
 
-const incomeArr = [12.00, 20.10];
-const expenseArr = [13.22, 1.58];
+const incomeArr = [];
+const expenseArr = [];
 
 updateDisplay();
 
@@ -19,3 +24,17 @@ function updateDisplay() {
 function add(accumulator, a) {
 	return accumulator + a;
 }
+
+// Event Listeners
+submitBtn.addEventListener('click', e => {
+	let newDiv = document.createElement("div");
+	newDiv.innerHTML = `
+		<div class="single-transaction" id="single-transaction">
+			<p1>${nameForm.value}</p1>
+			<p1>$${parseInt(amountForm.value).toFixed(2)}</p1>
+		</div>
+	`;
+	transactionParent.appendChild(newDiv);
+	incomeArr.push(parseInt(amountForm.value));
+	updateDisplay();
+});
