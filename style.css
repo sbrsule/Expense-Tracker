@@ -115,6 +115,51 @@ body {
 	cursor: pointer;
 }
 
+.trans-btn.selected {
+	
+}
+
 .trans-btn:active {
 	background: #fff;
+}
+
+.single-line-cont {
+	height: 40px;
+	margin: 30px 30px 0px 30px;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.single-line-cont h3 {
+	position: absolute;
+}
+
+input {
+	background: #feffed;
+	border: 2px solid;
+	text-align: right;
+}
+
+.single-line-cont input {
+	width: 300px;
+	height: 20px;
+	outline: none;
+	position: absolute;
+	right: 30px;
+	bottom: 0;
+}
+
+.description-container {
+	margin: 45px 30px 0px 30px;
+}
+
+.description-input {
+	width: 428px;
+	height: 175px;
+	text-align: left;
+	resize: none;
+	outline: none;
+	border: 2px solid;
+	background: #feffed;
 }
