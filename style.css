@@ -1,0 +1,120 @@
+:root {
+	--container-width: 1500px;
+	--container-height: 800px;
+	--transaction-width: calc(var(--container-width) * 0.55);
+	--subcontainer-height: calc(var(--container-height) * 0.9);
+	--modify-width: calc(var(--container-width) * 0.35);
+}
+
+* {
+	boxing-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: #74ebd5;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.finance-container {
+	background: #feffed;
+	border-radius: 20px;
+	width: var(--container-width);
+	height: var(--container-height);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.transaction-container {
+	border: 3px solid;
+	width: var(--transaction-width);
+	height: var(--subcontainer-height);
+	margin-right: calc(var(--container-width) * 0.0375);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.transaction-container h2 {
+	text-align: left;
+	width: var(--transaction-width);
+	margin-left: 80px;
+}
+
+.transactions {
+	width: calc(var(--transaction-width) * 0.9);
+	height: 400px;
+	border: 2px solid;
+	overflow-y: auto;
+	margin-bottom: 10px;
+}
+
+.balance {
+	width: calc(var(--transaction-width) * 0.9);
+	height: 125px;
+	border: 2px solid;
+	display: grid;
+	grid-template-columns: 190px 190px auto;	
+	grid-template-rows: 50px auto;
+}
+
+.balance p1{
+	margin-top: 10px;
+	font-size: 30px;
+}
+
+.income-display {
+	color: green;
+}
+
+.expense-display {
+	color: red;
+}
+
+.modify-container {
+	border: 3px solid;
+	width: var(--modify-width);
+	height: var(--subcontainer-height);
+}
+
+.container h1 {
+	text-align: center;
+}
+
+.modify-container {
+	text-align: left;
+}
+
+.modify-container h2 {
+	margin-left: 30px;
+}
+
+.trans-btn-container {
+	margin-left: 30px;
+}
+.trans-btn {
+	border: 2px solid;
+	background: none;
+	width: 150px;
+	height: 40px;
+	margin-right: 20px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.trans-btn:active {
+	background: #fff;
+}
