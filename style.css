@@ -28,7 +28,6 @@ body {
 }
 
 .finance-container {
-	background: #feffed;
 	border-radius: 20px;
 	width: var(--container-width);
 	height: var(--container-height);
@@ -39,6 +38,7 @@ body {
 }
 
 .transaction-container {
+	background: #fff;
 	border: 3px solid;
 	width: var(--transaction-width);
 	height: var(--subcontainer-height);
@@ -46,6 +46,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	border-radius: 15px;
 }
 
 .transaction-container h2 {
@@ -86,10 +87,12 @@ body {
 }
 
 .modify-container {
+	background: #fff;
 	border: 3px solid;
 	width: var(--modify-width);
 	height: var(--subcontainer-height);
 	text-align: left;
+	border-radius: 15px;
 }
 
 .container h1 {
@@ -135,13 +138,15 @@ body {
 }
 
 .add-btn.selected {
-	background: #fff;	
-	color: green;
+	background: green;	
+	color: #fff;
+	font-weight: bold;
 }
 
 .subtract-btn.selected {
-	background: #fff;
-	color: red;
+	background: red;
+	color: #fff;
+	font-weight: bold;
 }
 
 .trans-btn:active {

@@ -97,23 +97,32 @@ submitBtn.addEventListener('click', e => {
 		if (description.length > 30) {
 			description = description.substring(0, 26) + "...";
 		}
-
-		newDiv.innerHTML = `
-			<div class="single-transaction" id="single-transaction">
-				<p1>${name}</p1>
-				<p1>$${amount.toFixed(2)}</p1>
-				<p1>${description}</p1>
-			</div>
-		`;
-		transactionParent.appendChild(newDiv);
+		
 		if (addBtn.classList.contains('selected')) {
 			incomeArr.push(amount);
 			console.log(incomeArr);
+			newDiv.innerHTML = `
+                        	<div class="single-transaction" id="single-transaction">
+                        		<p1>${name}</p1>
+                        		<p1>+$${amount.toFixed(2)}</p1>
+                        		<p1>${description}</p1>
+                        	</div>
+                        `;
 		}
+
 		else if (subtractBtn.classList.contains('selected')) {
 			expenseArr.push(amount);
 			console.log(expenseArr);
+			newDiv.innerHTML = `
+                        	<div class="single-transaction" id="single-transaction">
+                        		<p1>${name}</p1>
+                        		<p1>-$${amount.toFixed(2)}</p1>
+                        		<p1>${description}</p1>
+                        	</div>
+                        `;
 		}
+
+		transactionParent.appendChild(newDiv);
 		nameForm.value = amountForm.value = descriptionForm.value = "";
 		amountForm.classList.remove('error-text');
 		amountForm.placeholder = '';
