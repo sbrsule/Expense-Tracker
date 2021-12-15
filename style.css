@@ -4,6 +4,7 @@
 	--transaction-width: calc(var(--container-width) * 0.55);
 	--subcontainer-height: calc(var(--container-height) * 0.9);
 	--modify-width: calc(var(--container-width) * 0.35);
+	--modify-sub-width: calc(var(--modify-width) - 60px);
 }
 
 * {
@@ -14,9 +15,13 @@ body {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	background: #74ebd5;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to top, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to top, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #16222A;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.web-header {
+	color: #fff;
 }
 
 .container {
@@ -53,6 +58,7 @@ body {
 	text-align: left;
 	width: var(--transaction-width);
 	margin-left: 80px;
+	margin-bottom: 0;
 }
 
 .transactions {
@@ -61,7 +67,8 @@ body {
 	border: 2px solid;
 	overflow-y: auto;
 	overflow-x: hidden;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
+	justify-content: center;
 }
 
 .balance {
@@ -69,7 +76,7 @@ body {
 	height: 125px;
 	border: 2px solid;
 	display: grid;
-	grid-template-columns: 190px 190px auto;	
+	grid-template-columns: 1fr 1fr 1fr;	
 	grid-template-rows: 50px auto;
 }
 
@@ -102,23 +109,28 @@ body {
 .modify-header-cont {
 	display: flex;
 	flex-direction: row;
+	position: relative;
+	width: var(--modify-sub-width);
+	margin-left: 30px;
 }
 
 .modify-container h2 {
-	margin-left: 30px;
+	margin-left: 30p
 }
 
 .trans-btn-container {
-	margin-left: 30px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	top: 25%;
 }
 .trans-btn {
 	border: 2px solid;
 	background: none;
 	min-width: 60px;
-	height: 35px;
+	height: 25%;
 	font-size: 20px;
 	margin: 0;
 	cursor: pointer;
@@ -140,12 +152,14 @@ body {
 .add-btn.selected {
 	background: green;	
 	color: #fff;
+	border: 2px green solid;
 	font-weight: bold;
 }
 
 .subtract-btn.selected {
 	background: red;
 	color: #fff;
+	border: 2px red solid;
 	font-weight: bold;
 }
 
@@ -185,7 +199,7 @@ input {
 }
 
 .description-input {
-	width: 457px;
+	width: calc(var(--modify-sub-width) - 8px);
 	height: 175px;
 	text-align: left;
 	resize: none;
@@ -200,7 +214,7 @@ input {
 }
 .submit-btn {
 	margin: 50px 30px;
-	width: 465px;
+	width: var(--modify-sub-width);
 	height: 75px;
 	background: none;
 	border: 2px solid;
@@ -211,13 +225,27 @@ input {
 .transaction-key {
 	display: grid;
 	grid-template-columns: 1fr 1fr 3fr;
-	width: calc(var(--transaction-width) * 0.9);
+	height: 50px;
+	width: 668px;
 }
 .single-transaction {
 	display: grid;
 	grid-template-columns: 1fr 1fr 3fr;
 	align-items: center;
-	background: #dedede;
 	height: 50px;
-	margin: 10px 0;
+	margin: 10px 5%;
+	width: 90%;
+	border-radius: 20px;
+}
+
+.single-transaction.add {
+	background: #56ab2f;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.single-transaction.subtract {
+	background: #ee0979;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

@@ -14,6 +14,17 @@ const expenseArr = [];
 
 updateDisplay();
 
+// Transaction class
+class Transaction {
+	constructor(name, amount, description = null) {
+		this.name = name;
+		this.amount = amount;
+		this.description = description;
+	}
+}
+
+const transactionArr = [];
+
 // Functions
 
 // Updates the display
@@ -86,6 +97,8 @@ submitBtn.addEventListener('click', e => {
 
 	if (amountForm.value.trim() && nameForm.value.trim()) { 
 		let newDiv = document.createElement("div");
+		newDiv.classList.add("single-transaction");
+		newDiv.setAttribute('id','single-transaction');
 		let name = nameForm.value;
 		if (name.length > 10) {
 			name = name.substring(0,6) + "...";
@@ -102,24 +115,22 @@ submitBtn.addEventListener('click', e => {
 			incomeArr.push(amount);
 			console.log(incomeArr);
 			newDiv.innerHTML = `
-                        	<div class="single-transaction" id="single-transaction">
                         		<p1>${name}</p1>
                         		<p1>+$${amount.toFixed(2)}</p1>
                         		<p1>${description}</p1>
-                        	</div>
                         `;
+			newDiv.classList.add('add');
 		}
 
 		else if (subtractBtn.classList.contains('selected')) {
 			expenseArr.push(amount);
 			console.log(expenseArr);
 			newDiv.innerHTML = `
-                        	<div class="single-transaction" id="single-transaction">
                         		<p1>${name}</p1>
                         		<p1>-$${amount.toFixed(2)}</p1>
                         		<p1>${description}</p1>
-                        	</div>
                         `;
+			newDiv.classList.add('subtract');
 		}
 
 		transactionParent.appendChild(newDiv);
