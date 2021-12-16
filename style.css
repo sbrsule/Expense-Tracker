@@ -59,6 +59,7 @@ body {
 	width: var(--transaction-width);
 	margin-left: 80px;
 	margin-bottom: 0;
+	margin-top: 30px;
 }
 
 .transactions {
@@ -75,6 +76,7 @@ body {
 	width: calc(var(--transaction-width) * 0.9);
 	height: 125px;
 	border: 2px solid;
+	border-radius: 35px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;	
 	grid-template-rows: 50px auto;
@@ -115,10 +117,11 @@ body {
 }
 
 .modify-container h2 {
-	margin-left: 30p
+	margin-top: 30px;
 }
 
 .trans-btn-container {
+	margin-top: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -134,6 +137,7 @@ body {
 	font-size: 20px;
 	margin: 0;
 	cursor: pointer;
+	transition: transform ease-in 0.2s;
 }
 
 .add-btn {
@@ -150,21 +154,25 @@ body {
 }
 
 .add-btn.selected {
-	background: green;	
+	background: #56ab2f;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: #fff;
 	border: 2px green solid;
 	font-weight: bold;
 }
 
 .subtract-btn.selected {
-	background: red;
+	background: #ee0979;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: #fff;
 	border: 2px red solid;
 	font-weight: bold;
 }
 
 .trans-btn:active {
-	background: #fff;
+	transform: scale(1.1);
 }
 
 .single-line-cont {
@@ -180,9 +188,11 @@ body {
 }
 
 input {
-	background: #feffed;
 	border: 2px solid;
+	border-radius: 10px;
 	text-align: right;
+	padding: 5px 10px;
+	font-size: 1.2rem;
 }
 
 .single-line-cont input {
@@ -205,6 +215,7 @@ input {
 	resize: none;
 	outline: none;
 	border: 2px solid;
+	border-radius: 10px;
 	background: #feffed;
 }
 
@@ -218,6 +229,7 @@ input {
 	height: 75px;
 	background: none;
 	border: 2px solid;
+	border-radius: 35px;
 	font-size: 28px;	
 	cursor: pointer;
 }
