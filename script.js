@@ -82,19 +82,22 @@ function formatCurrency(input, blur) {
 	caret_pos = updated_len - original_len + caret_pos;
 	input[0].setSelectionRange(caret_pos, caret_pos);
 }
+
+
 // Event Listeners
 submitBtn.addEventListener('click', e => {
-	console.log(amountForm.value);
+
+	// Checks if the amount or name forms are empty
 	if (!amountForm.value.trim()) {
         	amountForm.placeholder = 'Please Enter an Amount';
         	amountForm.classList.add('error-text');
         }
-
 	if (!nameForm.value.trim()) {
         	nameForm.placeholder = 'Please Enter a Name';
         	nameForm.classList.add('error-text');
         }
 
+	// If not, inserts the form values to the transactions div
 	if (amountForm.value.trim() && nameForm.value.trim()) { 
 		let newDiv = document.createElement("div");
 		newDiv.classList.add("single-transaction");
